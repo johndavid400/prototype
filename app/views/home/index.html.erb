@@ -1,0 +1,52 @@
+<center><h2>Welcome to Prototype Robotics</h2></center>
+
+<p>
+This is the new home for rediculouslygoodlooking.com. I needed to update my website, and thought I would just overhaul the entire thing to house some other ideas I had. So this is where I will be posting any new projects, stories, a forum for my book, and possibly selling some items in a web-store soon. Stay tuned.
+</p>
+
+
+<!-- Simple AnythingSlider -->
+
+<ul id="slider">
+
+  <li><img src="images/robotics/cover.jpg" width="800px" /></li>
+  <li>
+  <h2>The Gettysburg Address</h2>
+  <p />Four score and seven years ago
+  </li>
+  <li><img src="images/robotics/8.1.jpg" alt=""></li>
+  <li><img src="images/robotics/10.1.jpg" alt=""></li>
+  <li><img src="images/robotics/11.1.jpg" alt=""></li>
+  <li><img src="images/robotics/12.1.jpg" alt=""></li>
+
+</ul>
+
+<script>
+  // DOM Ready
+  $(function(){
+    $('#slider').anythingSlider();
+  });
+</script>
+
+<p />
+<hr>
+<p />
+
+<% if !@featured_articles.nil? %>
+  <% @featured_articles.each do |article| %>
+
+    <div class="index_article">
+      <h3 class="article"><%= article.title %></h3>
+      <p />
+      <% if !article.images.nil? %>
+        <div class="index_article_image">
+          <%= image_tag article.images.first.attachment.url(:medium), :class => "article_image" %>
+       </div>
+      <% end %>
+      <div class="index_article_text">
+        <%=h truncate(article.content.html_safe, :length => 1350) %>
+      </div>
+    </div>
+
+  <% end %>
+<% end %>

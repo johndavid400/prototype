@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228215118) do
+ActiveRecord::Schema.define(:version => 20111228215759) do
 
   create_table "activators", :force => true do |t|
     t.string   "description"
@@ -396,6 +396,16 @@ ActiveRecord::Schema.define(:version => 20111228215118) do
 
   add_index "products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
   add_index "products_taxons", ["taxon_id"], :name => "index_products_taxons_on_taxon_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.text     "comments"
+    t.integer  "user_id"
+    t.string   "thumb_file_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "promotion_action_line_items", :force => true do |t|
     t.integer "promotion_action_id"

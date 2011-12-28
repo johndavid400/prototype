@@ -1,0 +1,13 @@
+%center
+  %h1 Projects Listing
+
+- if !current_user.nil?
+  .new_project
+    = link_to "New Project", new_project_path
+
+.project_index
+  - @projects.each do |project|
+    .test
+      .projects
+        .project_caption
+          %h3= project.name

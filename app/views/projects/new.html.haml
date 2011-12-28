@@ -1,0 +1,20 @@
+%center
+  %h1 New Project
+  %p
+.new_form_container
+  = form_for(@project) do |f|
+    #form_left
+      = f.label 'Name' 
+      .form_field= f.text_field :name
+      %p
+      = f.label 'Comments'
+      .form_field= f.text_area :comments
+      %p
+      = if !current_user.nil?
+        .form_field= f.hidden_field :user_id, :value => current_user.id
+        %p
+
+      #submit
+        = f.submit
+        %p
+        = link_to 'Back', projects_path
