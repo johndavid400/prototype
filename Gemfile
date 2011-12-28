@@ -10,6 +10,8 @@ gem 'spree'
 gem 'twitter-bootstrap-rails'
 gem 'execjs'
 gem 'therubyracer'
+gem 'haml'
+gem 'forem', :git => "git://github.com/radar/forem.git"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,3 +39,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.8'
+
